@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to NeighBorrow
 
 ## Project info
 
@@ -8,15 +8,9 @@ NeighBorrow is a web-based platform designed to foster community engagement by e
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/3bdb0654-bf6e-45be-bcaf-e1bb926a8749) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -52,7 +46,7 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
@@ -60,7 +54,10 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+#AI Tools used:
+We have used lovable to create most pages but to finetune the application UI we have used Deepseek and human skills along with it.
+
+## How can I deploy this project using AI tools?
 
 Simply open [Lovable](https://lovable.dev/projects/3bdb0654-bf6e-45be-bcaf-e1bb926a8749) and click on Share -> Publish.
 
