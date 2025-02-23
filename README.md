@@ -4,11 +4,24 @@
 
 NeighBorrow is a web-based platform designed to foster community engagement by enabling neighbors to share resources, skills, and services in a secure and user friendly manner. The platform will use AI to enhance user experience through personalized recommendations, trust-building, and efficient matching.
 
+## Key Features
+- **Item Sharing**: Users can list items to lend or borrow (e.g., tools, equipment, bikes) and search for items by category, location, and availability.
+- **Skill Exchange**: Users can offer or request services (e.g., tutoring, pet-sitting, gardening) and exchange skills or items.
+- **Local Events and Alerts**: A bulletin board for posting community events, alerts, and announcements.
+- **Trust and Reviews**: User profiles with ratings and reviews, along with AI-powered fraud detection and trust scoring.
+- **AI-Powered Features**: Personalized recommendations, dynamic pricing suggestions, and predictive analytics.
+
+## Target Audience
+- **Primary Users**: Residents of local communities in urban and suburban areas in the USA.
+- **Demographics**: Adults aged 25-55 who are tech-savvy and interested in community building, sustainability, and cost-saving.
+- **Secondary Users**: Local businesses, community organizations, and event organizers.
+
+---
+
 ## How can I edit this code?
 
-There are several ways of editing your application.
 
-**Use your preferred IDE**
+**1. Use your preferred IDE**
 
 If you want to work locally using your own IDE, you can clone this repo and push changes.
 
@@ -30,13 +43,13 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+**2. Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+**3. Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
 - Click on the "Code" button (green button) near the top right.
@@ -46,17 +59,29 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with:
+### This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- AI Tools used: Lovable.ai, Deepseek ai
 
-##AI Tools used:
+#### We have used Lovable to create most pages, and to fine-tune the application's UI, we have utilized Deepseek AI along with human expertise. 
+#### This project is in its initial stage, and we are actively working on it.
 
-We have used lovable to create most pages but to finetune the application UI we have used Deepseek and human skills along with it.
+### Upcoming technologies:
+- Node.js
+- Express.js
+- MongoDB
+- Python with TensorFlow/PyTorch
+- AWS (EC2 for backend, S3 for storage) or Herok
+- Firebase Authentication or Auth0
+- Socket.io
+
+## Check the application:
+https://neighborrow-connect.lovable.app/
 
 ## How can I deploy this project using AI tools?
 
@@ -65,3 +90,4 @@ Simply open [Lovable](https://lovable.dev/projects/3bdb0654-bf6e-45be-bcaf-e1bb9
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
