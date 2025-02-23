@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MapPin, Calendar, Clock } from "lucide-react";
+import { MapPin, Calendar, Clock, ArrowLeft } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -12,6 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Link } from "react-router-dom";
 
 interface Event {
   id: number;
@@ -72,11 +73,11 @@ const Events = () => {
     const R = 6371; // Earth's radius in kilometers
     const dLat = (lat2 - lat1) * Math.PI / 180;
     const dLon = (lon2 - lon1) * Math.PI / 180;
-    const a = 
-      Math.sin(dLat/2) * Math.sin(dLat/2) +
-      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-      Math.sin(dLon/2) * Math.sin(dLon/2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c;
   };
 
@@ -149,7 +150,7 @@ const Events = () => {
 
   const handleLocationRequest = () => {
     const storedLocation = localStorage.getItem('userLocation');
-    
+
     if (storedLocation) {
       const location = JSON.parse(storedLocation);
       setUserLocation(location);
@@ -197,7 +198,25 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-secondary/30 to-white pt-20 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8">Nearby Events</h1>
+        {/* Back Button */}
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="ghost" className="flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+
+        {/* Change Location Button */}
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold">Nearby Events</h1>
+          <Button onClick={() => setShowLocationDialog(true)}>
+            Change Location
+          </Button>
+        </div>
+
+        {/* Events List */}
         <div className="grid gap-6">
           {events.map((event) => (
             <Card key={event.id}>
@@ -229,6 +248,7 @@ const Events = () => {
         </div>
       </div>
 
+      {/* Location Dialog */}
       <Dialog open={showLocationDialog} onOpenChange={setShowLocationDialog}>
         <DialogContent>
           <DialogHeader>
