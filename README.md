@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/3bdb0654-bf6e-45be-bcaf-e1bb926a8749
+NeighBorrow is a web-based platform designed to foster community engagement by enabling neighbors to share resources, skills, and services in a secure and user friendly manner. The platform will use AI to enhance user experience through personalized recommendations, trust-building, and efficient matching.
 
 ## How can I edit this code?
 
