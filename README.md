@@ -54,7 +54,8 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-#AI Tools used:
+##AI Tools used:
+
 We have used lovable to create most pages but to finetune the application UI we have used Deepseek and human skills along with it.
 
 ## How can I deploy this project using AI tools?
