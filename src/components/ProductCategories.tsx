@@ -2,26 +2,26 @@
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { HeadphonesIcon, ToolsIcon, ShoppingBagIcon, HomeIcon, PartyPopperIcon, SportsIcon, MicrophoneIcon } from "lucide-react";
+import { Headphones, Tool, ShoppingBag, Home, PartyPopper, Music, Monitor, Smartphone, Dog, Shirt, Utensils, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mainCategories = [
-  { id: 1, name: "Sound & Video", icon: <HeadphonesIcon className="h-6 w-6" />, subcategories: [
+  { id: 1, name: "Sound & Video", icon: <Headphones className="h-6 w-6" />, subcategories: [
     "Photography", "Photography Accessories", "Camcorders", "Other Audio & Video",
     "Music players", "Musical instruments", "Televisions", "Projectors & Accessories",
     "Music Accessories", "Audio equipment"
   ]},
-  { id: 2, name: "Gaming", icon: <SportsIcon className="h-6 w-6" /> },
-  { id: 3, name: "Pets", icon: <SportsIcon className="h-6 w-6" /> },
-  { id: 4, name: "Tools", icon: <ToolsIcon className="h-6 w-6" /> },
-  { id: 5, name: "Health & Baby", icon: <ShoppingBagIcon className="h-6 w-6" /> },
-  { id: 6, name: "Clothing", icon: <ShoppingBagIcon className="h-6 w-6" /> },
-  { id: 7, name: "Household", icon: <HomeIcon className="h-6 w-6" /> },
-  { id: 8, name: "Event & Party", icon: <PartyPopperIcon className="h-6 w-6" /> },
-  { id: 9, name: "Sports & Leisure", icon: <SportsIcon className="h-6 w-6" /> },
-  { id: 10, name: "Transportation", icon: <ShoppingBagIcon className="h-6 w-6" /> },
-  { id: 11, name: "Cooking", icon: <ShoppingBagIcon className="h-6 w-6" /> },
-  { id: 12, name: "Computers", icon: <ShoppingBagIcon className="h-6 w-6" /> },
+  { id: 2, name: "Gaming", icon: <Smartphone className="h-6 w-6" /> },
+  { id: 3, name: "Pets", icon: <Dog className="h-6 w-6" /> },
+  { id: 4, name: "Tools", icon: <Tool className="h-6 w-6" /> },
+  { id: 5, name: "Health & Baby", icon: <ShoppingBag className="h-6 w-6" /> },
+  { id: 6, name: "Clothing", icon: <Shirt className="h-6 w-6" /> },
+  { id: 7, name: "Household", icon: <Home className="h-6 w-6" /> },
+  { id: 8, name: "Event & Party", icon: <PartyPopper className="h-6 w-6" /> },
+  { id: 9, name: "Sports & Leisure", icon: <Smartphone className="h-6 w-6" /> },
+  { id: 10, name: "Transportation", icon: <ShoppingBag className="h-6 w-6" /> },
+  { id: 11, name: "Cooking", icon: <Utensils className="h-6 w-6" /> },
+  { id: 12, name: "Computers", icon: <Laptop className="h-6 w-6" /> },
 ];
 
 const ProductCategories = () => {
@@ -63,7 +63,7 @@ const ProductCategories = () => {
                 variant="outline" 
                 className="justify-start h-auto py-3 text-left"
               >
-                <MicrophoneIcon className="h-4 w-4 mr-2 flex-shrink-0" />
+                <Music className="h-4 w-4 mr-2 flex-shrink-0" />
                 <span className="truncate">{subcat}</span>
               </Button>
             ))}
