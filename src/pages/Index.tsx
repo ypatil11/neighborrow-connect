@@ -1,43 +1,24 @@
 
-// import Navbar from "@/components/Navbar";
-// import Hero from "@/components/Hero";
-// import FeaturedItems from "@/components/FeaturedItems";
-
-// const Index = () => {
-//   return (
-//     <div className="min-h-screen bg-white">
-//       <Navbar />
-//       <Hero />
-//       <FeaturedItems />
-//     </div>
-//   );
-// };
-
-// export default Index;
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import FeaturedItems from "@/components/FeaturedItems";
+import ProductCategories from "@/components/ProductCategories";
+import PopularListings from "@/components/PopularListings";
+import Testimonials from "@/components/Testimonials";
+import ValueProposition from "@/components/ValueProposition";
+import FrequentlyShared from "@/components/FrequentlyShared";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <div
-        className="background-wrapper"
-        style={{
-          backgroundImage: `url('/src/assets/images/background.jpeg')`,
-        }}
-      >
-        {/* Optional Overlay */}
-        <div className="overlay"></div>
-
-        {/* Content */}
-        <div className="content">
-          <Hero />
-          <FeaturedItems />
-        </div>
-      </div>
+      <Hero />
+      <ProductCategories />
+      <PopularListings />
+      <Testimonials />
+      <ValueProposition />
+      <FrequentlyShared />
+      <Footer />
     </div>
   );
 };
