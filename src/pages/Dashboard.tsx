@@ -59,8 +59,9 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gradient-to-b from-secondary/10 to-white">
       <Navbar />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
+      {/* Added sufficient padding to ensure content is below the fixed navbar */}
+      <main className="container mx-auto px-4 pt-24 pb-8">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
             Welcome, {user?.name || 'Neighbor'}!
           </h1>

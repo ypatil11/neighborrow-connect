@@ -32,6 +32,9 @@ const Navbar = () => {
               <Link to="/lend-borrow" className="text-gray-600 hover:text-primary transition-colors">
                 Lend/Borrow
               </Link>
+              <Link to="/profile" className="text-gray-600 hover:text-primary transition-colors">
+                Profile
+              </Link>
               <Button variant="outline" onClick={handleSignOut}>Sign Out</Button>
             </>
           ) : (
@@ -55,7 +58,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" aria-label="Menu">
               <Menu className="w-5 h-5" />
             </Button>
           </SheetTrigger>
