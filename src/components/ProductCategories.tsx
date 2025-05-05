@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { Headphones, Tool, ShoppingBag, Home, PartyPopper, Music, Monitor, Smartphone, Dog, Shirt, Utensils, Laptop } from "lucide-react";
+import { Headphones, ShoppingBag, Home, PartyPopper, Music, Monitor, Smartphone, Dog, Shirt, Utensils, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mainCategories = [
@@ -13,7 +13,7 @@ const mainCategories = [
   ]},
   { id: 2, name: "Gaming", icon: <Smartphone className="h-6 w-6" /> },
   { id: 3, name: "Pets", icon: <Dog className="h-6 w-6" /> },
-  { id: 4, name: "Tools", icon: <Tool className="h-6 w-6" /> },
+  { id: 4, name: "Tools", icon: <Utensils className="h-6 w-6" /> }, // Changed Tool to Utensils
   { id: 5, name: "Health & Baby", icon: <ShoppingBag className="h-6 w-6" /> },
   { id: 6, name: "Clothing", icon: <Shirt className="h-6 w-6" /> },
   { id: 7, name: "Household", icon: <Home className="h-6 w-6" /> },
