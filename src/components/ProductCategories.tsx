@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { Headphones, ShoppingBag, Home, PartyPopper, Music, Monitor, Smartphone, Dog, Shirt, Utensils, Laptop } from "lucide-react";
+import { ChevronLeft, ChevronRight, Headphones, ShoppingBag, Home, PartyPopper, Music, Monitor, Smartphone, Dog, Shirt, Utensils, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mainCategories = [
@@ -26,32 +26,74 @@ const mainCategories = [
 
 const ProductCategories = () => {
   const [activeCategory, setActiveCategory] = useState<number | null>(1);
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="py-12 bg-white" id="browse">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">All Products</h2>
         
-        {/* Main categories - horizontal scroll */}
+        {/* Main categories - horizontal scroll with navigation buttons */}
         <div className="relative mb-8">
-          <ScrollArea className="w-full whitespace-nowrap pb-4">
-            <div className="flex space-x-4 px-1">
-              {mainCategories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={activeCategory === category.id ? "default" : "outline"}
-                  className={cn(
-                    "flex-shrink-0 h-24 w-32 flex-col gap-2",
-                    activeCategory === category.id ? "bg-primary text-white" : "bg-white"
-                  )}
-                  onClick={() => setActiveCategory(category.id)}
-                >
-                  {category.icon}
-                  <span className="text-sm">{category.name}</span>
-                </Button>
-              ))}
+          <div className="flex items-center">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute left-0 z-10 bg-white/80 backdrop-blur-sm border rounded-full shadow-sm hover:bg-gray-100 hidden md:flex"
+              onClick={scrollLeft}
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            
+            <div 
+              className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pb-4 px-1"
+              ref={scrollContainerRef}
+              style={{ 
+                scrollbarWidth: 'thin',
+                msOverflowStyle: 'none'
+              }}
+            >
+              <div className="flex space-x-4 min-w-max">
+                {mainCategories.map((category) => (
+                  <Button
+                    key={category.id}
+                    variant={activeCategory === category.id ? "default" : "outline"}
+                    className={cn(
+                      "flex-shrink-0 h-24 w-32 flex-col gap-2",
+                      activeCategory === category.id ? "bg-primary text-white" : "bg-white"
+                    )}
+                    onClick={() => setActiveCategory(category.id)}
+                  >
+                    {category.icon}
+                    <span className="text-sm">{category.name}</span>
+                  </Button>
+                ))}
+              </div>
             </div>
-          </ScrollArea>
+
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute right-0 z-10 bg-white/80 backdrop-blur-sm border rounded-full shadow-sm hover:bg-gray-100 hidden md:flex"
+              onClick={scrollRight}
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
 
         {/* Subcategories */}
