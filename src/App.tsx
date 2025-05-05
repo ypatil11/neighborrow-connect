@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import LendBorrowSelection from "./pages/LendBorrowSelection";
 import Lend from "./pages/Lend";
 import Borrow from "./pages/Borrow";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,9 @@ const AppRoutes = () => {
       <Route path="/lend-borrow" element={<ProtectedRoute><LendBorrowSelection /></ProtectedRoute>} />
       <Route path="/lend" element={<ProtectedRoute><Lend /></ProtectedRoute>} />
       <Route path="/borrow" element={<ProtectedRoute><Borrow /></ProtectedRoute>} />
+      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+      <Route path="/lended-items" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/borrowed-items" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       
       <Route path="*" element={<NotFound />} />
     </Routes>
